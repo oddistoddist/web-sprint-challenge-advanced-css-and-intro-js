@@ -251,8 +251,8 @@ function get20s(array){
     century.push(i + "")}
   // }console.log(array[3][2])
   for (let j = 0; j<array.length; j++){
-    if (century.includes(array[j].years.split(' ')[0].toString())){
-      if (century.includes(array[j].years.split(' ')[2].toString())){
+    if (century.includes(array[j].years.split(' ')[0])){
+      if (century.includes(array[j].years.split(' ')[2])){
         newArray.push(array[j].name);
         console.log(newArray);
       } return newArray;
