@@ -245,18 +245,21 @@ If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 // Hint - Look up the .split() method
 
 function get20s(array){
-  let newArr = []
+  let newArray = []
   let century = []
   for (let i = 1900; i<2000; i++){
-    century.push(i + '')
-  }console.log(century)
+    century.push(i + "")}
+  // }console.log(array[3][2])
   for (let j = 0; j<array.length; j++){
-    if (century.includes(array[j].years.split(' ')[0]) && century.includes(array[j].years.split(' ')[2])){
-      newArr.push(array[j].name)
-    } return newArr;
-  }console.log(newArr)
+    if (century.includes(array[j].years.split(' ')[0].toString())){
+      if (century.includes(array[j].years.split(' ')[2].toString())){
+        newArray.push(array[j].name);
+        console.log(newArray);
+      } return newArray;
+    }
+  }
 }
-
+console.log(artists[3].years.split(' ')[0].toString())
 
  
   
@@ -296,8 +299,17 @@ Use addArtist to do the following:
 
 Example: addArtist(artists) should return the artists array with the above object added to the end of the array. */
 
-function addArtist(/*Your Code Here*/){
-    /*Your Code Here*/
+function addArtist(arr){
+    arr.push({ 
+      id: 20,
+      name: "Your Name Here", 
+      years: "Your Birth Year - current day",
+      genre: "Web Design", 
+      nationality: "Your Nationality Here",
+      bio: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros."
+    })
+    return arr
+    // array.push({id, name, years, genre, nationality, bio})
   }
 
   
@@ -309,8 +321,13 @@ Use lotsOfArt to do the following:
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ... "Albrecht Dürer"]*/
 
-function lotsOfArt(/*Your Code Here*/){
-  /*Your Code Here*/
+function lotsOfArt(array){
+  let der = []
+  for (let i = 0; i < array.length; i++){
+    if(array[i].paintings > 100){
+      der.push(array[i].name);
+    }
+  }return der;
 }
 
 
